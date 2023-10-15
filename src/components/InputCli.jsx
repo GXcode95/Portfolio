@@ -1,6 +1,4 @@
-import { useEffect } from "react"
 import Prompt from "./Prompt"
-// import { useState } from 'react'
 
 function InputCli({handleSubmit, inputRef}) {  
   

@@ -1,11 +1,19 @@
 import Prompt from "./Prompt"
-import HistoryItem from "./HistoryItem"
 import COMMANDS from "../commands"
 
 function History({history}) {
 
   const commandHasOuput = (command) => {
     return command != '' && (!COMMANDS[command] || COMMANDS[command].component != null)
+  }
+
+  const CommandOutput = ({entry}) => {
+    if (COMMANDS[entry.command] == undefined)
+      return <p>Unknown command: {entry.command}</p>
+      
+    const Output = COMMANDS[entry.command].component
+
+    return <Output entry={entry}/>
   }
 
   return (
@@ -18,7 +26,7 @@ function History({history}) {
               <span>{entry.string}</span>
             </div>
 
-            { commandHasOuput(entry.command) && <HistoryItem entry={entry} /> }
+            { commandHasOuput(entry.command) && <CommandOutput entry={entry} /> }
           </div>
           
         ))}
