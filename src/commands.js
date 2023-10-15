@@ -3,6 +3,7 @@ import EchoCmd from "./components/commands/EchoCmd"
 import FetchCmd from "./components/commands/FetchCmd"
 import BannerCmd from "./components/commands/BannerCmd"
 import EncodeCmd from './components/commands/EncodeCmd'
+import GuiCmd from "./components/commands/GuiCmd"
 
 const COMMANDS = {
   google: {
@@ -31,6 +32,10 @@ const COMMANDS = {
   },
   encode: {
     component: EncodeCmd,
+    exec: null
+  },
+  gui: {
+    component: GuiCmd,
     exec: null
   }
 
