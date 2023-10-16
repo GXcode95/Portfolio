@@ -11,7 +11,7 @@
   }
 
   .menu {
-    @apply flex-row gap-8;
+    @apply hidden flex-row gap-8;
 
     a {
       @apply btn normal-case no-underline text-lg;

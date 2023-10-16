@@ -1,8 +1,6 @@
 .contact {
 	@apply flex justify-center pt-10;
 
-	.wrapper { @apply flex flex-col gap-10 w-full max-w-[320px]; }
-
 	h1 { @apply text-4xl border-b w-full min-w-[200px] py-6; }
 
 	main { @apply flex flex-col gap-10; }
@@ -29,17 +27,7 @@
 	/***  Media  ***/
 	/***************/
 	
-	@media (min-width: 500px) {
-		.wrapper { @apply max-w-[480px] gap-10; }
-	}
-
-	@media (min-width: 750px) {
-		.wrapper { @apply max-w-[720px] gap-10; }
-	}
-
 	@media (min-width:950px) {
-		.wrapper { @apply max-w-[920px] gap-16; }
-		
 		form {
 			@apply flex-1;
 			
@@ -49,10 +37,6 @@
 		main { @apply flex-row; }
 		
 		aside { @apply flex-1; }
-	}
-
-	@media (min-width:1250px) {
-		.wrapper { @apply max-w-[1100px] gap-16; }
 	}
 }
 

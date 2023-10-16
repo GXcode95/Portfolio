@@ -10,6 +10,7 @@ const data = {
   template_id: '',
   user_id: '',
 }
+
 function Contact() {
   const [formData, setFormdata] = useState({
     email: "",

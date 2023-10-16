@@ -44,14 +44,14 @@ function Projects() {
 
   return (
     <div className="projects">
-      <section>
+      <section className="wrapper">
         <h2>Profesional Projects</h2>
         {projects.pro.map(project => {
           return <ProjectCard key={project.name} project={project}/>
         })}
       </section>
       
-      <section>
+      <section className="wrapper">
         <h2>Personal Projects</h2>
         {projects.perso.map(project => {
           return <ProjectCard key={project.name} project={project}/>

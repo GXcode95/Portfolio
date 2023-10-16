@@ -38,9 +38,11 @@ textarea {
 .btn-outline {
   border-radius: 0 !important;
 }
+
 .badge {
   border-radius: .2rem !important;
 }
 
 
 
+.wrapper { @apply flex flex-col gap-16 w-10/12 min-w-[320px] max-w-[1200px]; }

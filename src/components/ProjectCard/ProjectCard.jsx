@@ -25,7 +25,7 @@ function ProjectCard({project}) {
         </ul>
 
         <div className='flex gap-3 flex-wrap'>
-          <a href={project.code_url} target="_blank" rel="noreferrer" className="btn btn-outline btn-primary">
+          <a href={project.code_url} target="_blank" rel="noreferrer" className="btn btn-primary">
             Source Code
           </a>
         </div>
