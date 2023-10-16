@@ -4,6 +4,7 @@ import Home from './pages/home/Home'
 import Shell from './pages/shell/Shell'
 import Contact from './pages/contact/Contact'
 import Projects from './pages/Projects/Projects'
+import About from './pages/about/About'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: '/projects',
     element:  <Projects />
+  },
+  {
+    path: '/about',
+    element:  <About />
   }
 ])
 

@@ -25,21 +25,23 @@
 	.intro {
 		@apply max-w-[800px] px-5 mx-auto;
 	}
-}
 
-@media (min-width:990px) {
-	.home {
+	/***************/
+	/***  Media  ***/
+	/***************/
+
+	@media (min-width:990px) {
 		@apply flex flex-row-reverse;
-
+	
 		.bg-image,
 		.text {
 			@apply w-1/2;
 		}
-
+	
 		.intro {
 			@apply max-w-[450px];
 		}
-	}
+	}	
 }
 
 

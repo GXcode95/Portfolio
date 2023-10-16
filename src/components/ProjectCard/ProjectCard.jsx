@@ -2,8 +2,15 @@ import './project_card.css'
 
 function ProjectCard({project}) {
 
+  const handleClick = (e) => {
+    if (e.target.tagName == 'A')
+      return
+    
+    window.open(project.live_url)
+  }
+
   return (
-    <div className="project-card">
+    <div className="project-card" onClick={handleClick}>
       <div
         className="bg-image"
         style={{ backgroundImage: `url(${project.image_url})` }}
@@ -18,10 +25,7 @@ function ProjectCard({project}) {
         </ul>
 
         <div className='flex gap-3 flex-wrap'>
-          <a href={project.live_url} target="_blank" rel="noreferrer" className="btn btn-outline btn-primary">
-            See Live
-          </a>
-          <a href={project.code_url} target="_blank" rel="noreferrer" className="btn btn-outline btn-secondary">
+          <a href={project.code_url} target="_blank" rel="noreferrer" className="btn btn-outline btn-primary">
             Source Code
           </a>
         </div>

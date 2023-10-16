@@ -1,0 +1,56 @@
+.about {
+	@apply flex justify-center py-10;
+
+	.wrapper { @apply flex flex-col gap-6 w-full max-w-[320px]; }
+
+	h1 { @apply text-4xl border-b w-full min-w-[200px] py-6; }
+
+	section {
+		@apply flex flex-col gap-6;
+		
+		h2 { @apply text-2xl; }
+	}
+
+	.work li {
+		@apply w-full grid border-b py-1 mb-1;
+
+		grid-template-columns: 3fr 1fr 1fr;
+
+		.work--title {
+			@apply font-extrabold
+		}
+	}
+
+	.skills {
+		ul { 
+			@apply flex flex-wrap gap-6; 
+
+			li {
+				@apply border border-gray-lightest px-6 py-3;
+
+				border-radius: 0;
+			}
+		}
+	}
+
+	/***************/
+	/***  Media  ***/
+	/***************/
+	
+	@media (min-width: 500px) {
+		.wrapper { @apply max-w-[480px] gap-10; }
+	}
+
+	@media (min-width: 750px) {
+		.wrapper { @apply max-w-[720px] gap-10; }
+	}
+
+	@media (min-width: 950px) {
+		.wrapper { @apply max-w-[920px] gap-16; }
+	}
+
+	@media (min-width: 1250px) {
+		.wrapper { @apply max-w-[1100px] gap-16; }
+	}
+}
+

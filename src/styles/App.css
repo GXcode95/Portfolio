@@ -1,4 +1,5 @@
-.btn {
+.btn,
+.btn-outline {
   border-radius: 0 !important;
 }
 .badge {
