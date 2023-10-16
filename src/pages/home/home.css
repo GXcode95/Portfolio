@@ -16,6 +16,7 @@
 		h2 {
 			@apply text-3xl;
 		}
+
 		p {
 			@apply text-lg;
 		}
@@ -23,16 +24,6 @@
 
 	.intro {
 		@apply max-w-[800px] px-5 mx-auto;
-	}
-
-	.btn {
-		border-radius: 0;
-	}
-	
-	.btn-outline:hover,
-	.btn-primary:hover {
-		background-color: inherit !important;
-		@apply text-accent border-accent !important;
 	}
 }
 
@@ -49,8 +40,6 @@
 			@apply max-w-[450px];
 		}
 	}
-
-
 }
 
 

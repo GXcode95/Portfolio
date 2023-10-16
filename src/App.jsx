@@ -2,6 +2,7 @@ import './styles/App.css'
 import Shell from './pages/shell/Shell'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/home/Home'
+import Contact from './pages/contact/Contact.jsx'
 
 const router = createBrowserRouter([
   {
@@ -12,12 +13,16 @@ const router = createBrowserRouter([
     path: '/home',
     element:  <Home />
   },
+  {
+    path: '/contact',
+    element:  <Contact />
+  }
 ])
 
 
 function App() {
   return (
-    <div class="app">
+    <div className="app">
       <RouterProvider router={router} />
     </div>
   )

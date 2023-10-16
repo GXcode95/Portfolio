@@ -1,0 +1,46 @@
+.contact {
+	@apply flex justify-center pt-10;
+
+	.wrapper { @apply flex flex-col gap-10 w-full max-w-[720px]; }
+
+	h1 { @apply text-4xl border-b w-full min-w-[200px] py-6; }
+
+	main { @apply flex flex-col gap-10; }
+
+	.text {
+		@apply flex flex-col gap-2;
+		
+		h2 { @apply text-3xl pb-4; }
+
+		p {	@apply text-lg; }
+
+		a {	text-decoration: underline;	}	
+	}
+	
+	form { 
+		@apply flex flex-col gap-6; 
+		
+		.inputs {	@apply flex flex-col gap-6; }
+	
+		.btn { @apply text-white self-start; }
+	}
+
+	/***************/
+	/***  Media  ***/
+	/***************/
+	
+	@media (min-width:950px) {
+		.wrapper { @apply max-w-[920px] gap-16; }
+		
+		form {
+			.inputs {	@apply flex-row; }
+		}
+
+		main { @apply flex-row; }
+		
+		aside { @apply flex-1; }
+		
+		form { @apply flex-1; }
+	}
+}
+
