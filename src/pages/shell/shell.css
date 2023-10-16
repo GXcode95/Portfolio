@@ -1,0 +1,10 @@
+.shell  {
+  font-family: 'Roboto', monospace;
+  letter-spacing: .12rem;
+
+  @apply p-2 overflow-hidden w-screen h-screen overflow-y-auto;
+
+  hr {
+    @apply border-gray-500;
+  }
+}

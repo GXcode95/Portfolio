@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
-import History from '../components/History'
-import InputCli from '../components/InputCli'
-import COMMANDS from '../commands'
-
-
-
+import History from '../../components/History'
+import InputCli from '../../components/InputCli'
+import COMMANDS from '../../commands'
+import './shell.css'
 function Shell() {
   const [history, setHistory] = useState([])
   const inputRef = useRef(null)
@@ -36,10 +34,10 @@ function Shell() {
   }, [history]);
 
   return (
-    <div className="p-2 overflow-hidden w-screen h-screen overflow-y-auto">
+    <div className="shell">
       <History history={history} />
 
-      <hr className='border-gray-500' />
+      <hr />
 
       <InputCli
         inputRef={inputRef}

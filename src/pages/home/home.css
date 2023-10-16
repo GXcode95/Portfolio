@@ -1,0 +1,57 @@
+.home {
+	@apply block h-screen w-screen min-h-[700px] items-center;
+	
+	.bg-image {
+		@apply h-full w-full relative;
+		@apply bg-cover bg-center;
+	}
+
+	.text {
+		@apply py-6 w-full;
+
+		h1 { 
+			@apply mb-8 text-3xl font-extrabold text-primary;
+		}
+
+		h2 {
+			@apply text-3xl;
+		}
+		p {
+			@apply text-lg;
+		}
+	}
+
+	.intro {
+		@apply max-w-[800px] px-5 mx-auto;
+	}
+
+	.btn {
+		border-radius: 0;
+	}
+	
+	.btn-outline:hover,
+	.btn-primary:hover {
+		background-color: inherit !important;
+		@apply text-accent border-accent !important;
+	}
+}
+
+@media (min-width:990px) {
+	.home {
+		@apply flex flex-row-reverse;
+
+		.bg-image,
+		.text {
+			@apply w-1/2;
+		}
+
+		.intro {
+			@apply max-w-[450px];
+		}
+	}
+
+
+}
+
+
+

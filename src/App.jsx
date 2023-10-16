@@ -1,7 +1,7 @@
 import './styles/App.css'
-import Shell from './pages/Shell'
+import Shell from './pages/shell/Shell'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/home/Home'
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,11 @@ const router = createBrowserRouter([
 
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <div class="app">
+      <RouterProvider router={router} />
+    </div>
+  )
 }
 
 export default App

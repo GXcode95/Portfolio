@@ -2,7 +2,7 @@ function FetchCmd() {
 
   return (
     <div className="flex items-center gap-[5rem]">
-      <p className="whitespace-pre-wrap">
+      <p className="whitespace-pre-wrap logo">
         <span className="text-green-500">{`
                 ,xNMM.
                .OMMMMo 
