@@ -1,18 +1,21 @@
 import "./home.css";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
+import me from '../../assets/me.jpg'
 
 export const Home = () => {
   return (
       <section className="home">
           <div
             className="bg-image"
-            style={{ backgroundImage: "url(https://i.ibb.co/wRjcnGL/me.jpg)" }}
+            style={{ backgroundImage: `url(${me})` }}
+            // style={{ backgroundImage: "url(https://i.ibb.co/wRjcnGL/me.jpg)" }}
           ></div>
           
           <div className="text">
             <div className="intro">
-                <h2 className="mb-1">Hi, i'm</h2>
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                <h2 className="mb-1">Hi, I'm</h2>
                 <h1>
                   <Typewriter
                     options={{
@@ -28,10 +31,11 @@ export const Home = () => {
                   />
                 </h1>
                 <p className="mb-1">Dedicated technology enthusiast with an insatiable curiosity for unraveling the complexities of our digital world.</p>
-            </div>  
+            </div>
+
             <div className="flex gap-5 justify-center">
-              <Link to="/portfolio" className="btn btn-outline btn-primary">
-                Portfolio
+              <Link to="/projects" className="btn btn-outline btn-primary">
+                Projects
               </Link>
               <Link to="/about" className="btn btn-outline btn-primary">
                 About

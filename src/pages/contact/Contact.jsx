@@ -99,6 +99,7 @@ function Contact() {
                 required
               />
             </div>
+            
             <textarea 
               placeholder="Message..."
               name="message"

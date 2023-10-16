@@ -48,7 +48,7 @@ module.exports = {
         mytheme: {
           "primary": "#1eb854",
           "secondary": "#1db990",
-          "accent": "#1db9ac",
+          "accent": colors.gray.dark,
           "neutral": "#18342b",
           "base-100": colors.black,
           "info": "#3abff8",
