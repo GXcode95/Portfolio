@@ -9,7 +9,6 @@ export const Home = () => {
           <div
             className="bg-image"
             style={{ backgroundImage: `url(${me})` }}
-            // style={{ backgroundImage: "url(https://i.ibb.co/wRjcnGL/me.jpg)" }}
           ></div>
           
           <div className="text">
@@ -33,14 +32,14 @@ export const Home = () => {
                 <p className="mb-1">Dedicated technology enthusiast with an insatiable curiosity for unraveling the complexities of our digital world.</p>
             </div>
 
-            <div className="flex gap-5 justify-center">
-              <Link to="/projects" className="btn btn-outline btn-primary">
+            <div className="flex gap-14 justify-center mt-10">
+              <Link to="/projects" className="btn  btn-primary">
                 Projects
               </Link>
-              <Link to="/about" className="btn btn-outline btn-primary">
+              <Link to="/about" className="btn  btn-primary">
                 About
               </Link>
-              <Link to="/contact" className="btn btn-outline btn-primary">
+              <Link to="/contact" className="btn  btn-primary">
                 Contact
               </Link>
             </div>

@@ -21,10 +21,6 @@
     box-shadow: 0 0 4px 0px white; 
   }
   
-  .btn-primary:hover {
-    @apply text-gray-lightest;
-  }
-  
   @media (min-width:950px) {
     @apply flex-row h-[400px];
   

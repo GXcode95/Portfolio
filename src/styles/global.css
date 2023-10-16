@@ -39,6 +39,10 @@ textarea {
   border-radius: 0 !important;
 }
 
+.btn-primary:hover {
+  @apply text-gray-lightest;
+}
+
 .badge {
   border-radius: .2rem !important;
 }
