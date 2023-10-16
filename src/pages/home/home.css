@@ -1,5 +1,5 @@
 .home {
-	@apply block h-screen w-screen min-h-[700px] items-center;
+	@apply block h-screen w-full min-h-[700px] items-center;
 	
 	.bg-image {
 		@apply h-full w-full relative;

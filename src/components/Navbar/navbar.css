@@ -1,0 +1,52 @@
+.nav {
+  @apply bg-base-100 navbar min-h-[3.5rem] max-h-[3.5rem];
+  z-index: 1000;
+
+  .title {
+    @apply btn normal-case text-xl text-gray-lightest;
+    
+    &:hover {
+      @apply text-primary;
+    }
+  }
+
+  .menu {
+    @apply flex-row gap-8;
+
+    a {
+      @apply btn normal-case no-underline text-lg;
+
+      &:hover {
+        @apply text-primary;
+      }
+    }
+  }
+
+  .menu-sm {
+    @apply block;
+
+    .nav-wrapper {
+      @apply absolute w-full left-0;
+      height: calc(100vh - 3.5rem);
+
+      nav {
+        @apply flex flex-col gap-8 px-6 py-4;
+        @apply bg-base-100 text-xl font-extrabold text-gray-lightest;
+      }
+    }
+
+    a { @apply no-underline; }
+  }
+
+  @media(min-width: 600px) {
+    .menu {
+      @apply block;
+    }
+    
+    .menu-sm {
+      @apply hidden;
+    }
+  }
+
+
+}

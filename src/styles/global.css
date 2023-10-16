@@ -34,5 +34,13 @@ textarea {
   }
 }
 
+.btn,
+.btn-outline {
+  border-radius: 0 !important;
+}
+.badge {
+  border-radius: .2rem !important;
+}
+
 
 
