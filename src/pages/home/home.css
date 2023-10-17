@@ -26,9 +26,17 @@
 		@apply max-w-[800px] px-5 mx-auto;
 	}
 
+	.cta {
+		@apply flex max-w-[800px] mx-auto justify-start gap-5 mt-10  px-5;
+	}
+	
 	/***************/
 	/***  Media  ***/
 	/***************/
+
+	@media (min-width:600px) {
+		.cta { @apply gap-10; }
+	}
 
 	@media (min-width:990px) {
 		@apply flex flex-row-reverse;
@@ -40,6 +48,10 @@
 	
 		.intro {
 			@apply max-w-[450px];
+		}
+
+		.cta {
+			@apply justify-center px-0 gap-14;
 		}
 	}	
 }

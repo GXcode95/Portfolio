@@ -32,7 +32,7 @@ export const Home = () => {
                 <p className="mb-1">Dedicated technology enthusiast with an insatiable curiosity for unraveling the complexities of our digital world.</p>
             </div>
 
-            <div className="flex gap-14 justify-center mt-10">
+            <div className="cta">
               <Link to="/projects" className="btn  btn-primary">
                 Projects
               </Link>
