@@ -1,7 +1,11 @@
-import Prompt from "./Prompt"
+import Prompt from "../Prompt/Prompt"
 
 function InputCli({handleSubmit, inputRef}) {  
-  
+  const preventFocusOut = (e) => {
+    e.preventDefault()
+    e.target.focus()
+  }
+
   return (
     <>
     <form className="flex gap-1" onSubmit={handleSubmit}>
@@ -16,6 +20,7 @@ function InputCli({handleSubmit, inputRef}) {
         type="text"
         className={`focus:outline-none flex-grow`}
         autoFocus={true}
+        onBlur={preventFocusOut}
       />
     </form>
     </>

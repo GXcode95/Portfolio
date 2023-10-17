@@ -1,0 +1,6 @@
+.help-cmd {
+  li {
+    @apply grid py-2;
+    grid-template-columns: 1fr 1fr;
+  }
+}

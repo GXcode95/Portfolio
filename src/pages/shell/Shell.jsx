@@ -2,12 +2,12 @@ import './shell.css'
 import COMMANDS from '../../commands'
 
 import { useState, useEffect, useRef } from 'react'
-import History from '../../components/History'
-import InputCli from '../../components/InputCli'
+import History from '../../components/shell/History/History'
+import InputCli from '../../components/shell/InputCli/InputCli'
 import { motion } from 'framer-motion'
 
 function Shell() {
-  const [history, setHistory] = useState([])
+  const [history, setHistory] = useState([{date: new Date(), command: 'banner', args: [], string: null}])
   const inputRef = useRef(null)
 
   const handleSubmit = (e) => {
@@ -47,8 +47,6 @@ function Shell() {
       }}
     >
       <History history={history} />
-
-      <hr />
 
       <InputCli
         inputRef={inputRef}

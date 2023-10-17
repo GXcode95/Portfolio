@@ -1,5 +1,5 @@
-import Prompt from "./Prompt"
-import COMMANDS from "../commands"
+import Prompt from "../Prompt/Prompt"
+import COMMANDS from "../../../commands"
 
 function History({history}) {
 
@@ -21,12 +21,15 @@ function History({history}) {
       <div className="history">
         { history.map((entry, idx)=> (
           <div key={idx}>
-            <div className="flex gap-1">
-              <Prompt />
-              <span>{entry.string}</span>
-            </div>
+            { entry.string &&
+                <div className="flex gap-1">
+                  <Prompt />
+                  <span>{entry.string}</span>
+                </div>
+            }
 
-            { commandHasOuput(entry.command) && <CommandOutput entry={entry} /> }
+            { commandHasOuput(entry.command) && 
+                <CommandOutput entry={entry} /> }
           </div>
           
         ))}

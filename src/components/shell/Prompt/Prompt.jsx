@@ -5,14 +5,14 @@ function Prompt() {
   return (
     <>
       <div>
-        <span className="text-yellow-500">
+        <span className="text-info">
           visitor
         </span>
-        <span className="text-gray-300">@</span>
-        <span className="text-green-500">
+        <span className="text-gray-lightest">@</span>
+        <span className="text-primary">
           xaviercode.com
         </span>
-      <span className="text-gray-300">:$ ~ </span>
+      <span className="text-gray-lightest">:$ ~ </span>
     </div>
     </>
   )
