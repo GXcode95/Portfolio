@@ -119,7 +119,7 @@ function Contact() {
               required
             />
 
-            <button type="submit" className="btn btn-outline btn-primary">
+            <button type="submit" className={`btn btn-primary ${formData.loading && 'btn-outline'}`}>
               {formData.loading ? "Sending..." : "Send"}
             </button>
           </form>

@@ -1,5 +1,6 @@
 .home {
-	@apply block h-screen w-full min-h-[700px] items-center;
+	@apply block w-full min-h-[700px] items-center;
+	height: 50vh;
 	
 	.bg-image {
 		@apply h-full w-full relative;
@@ -39,7 +40,7 @@
 	}
 
 	@media (min-width:990px) {
-		@apply flex flex-row-reverse;
+		@apply h-screen flex flex-row-reverse;
 	
 		.bg-image,
 		.text {
