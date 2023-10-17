@@ -1,7 +1,7 @@
 import './navbar.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { CommandLineIcon } from '@heroicons/react/24/solid'
+import { Bars3Icon, CommandLineIcon } from '@heroicons/react/24/solid'
 
 function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -55,7 +55,7 @@ function Navbar() {
         <div className="menu-sm">
           <div className="icon-menu">
             <button onClick={toggleMenu} className="btn">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+              <Bars3Icon className="h-6 w-6 text-gray-lightest"/>
             </button>
           </div>
 

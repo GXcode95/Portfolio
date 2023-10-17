@@ -6,9 +6,9 @@ import './contact.css'
 
 const data = {
   email: 'xavier.grenouillet@gmail.com',
-  service_id: '',
-  template_id: '',
-  user_id: '',
+  service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  user_id: import.meta.env.VITE_EMAILJS_USER_ID,
 }
 
 function Contact() {

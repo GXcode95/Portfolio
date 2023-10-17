@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  @apply text-white underline;
+  @apply text-gray-lightest underline;
 
   &:hover {
     @apply text-primary;
