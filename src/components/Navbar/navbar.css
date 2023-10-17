@@ -3,26 +3,39 @@
   z-index: 1000;
 
   .title {
-    @apply btn normal-case text-xl text-gray-lightest;
-    
-    &:hover {
-      @apply text-primary;
-    }
+    @apply btn normal-case text-xl text-gray-lightest hover:text-primary;
   }
 
-  .menu {
-    @apply hidden flex-row gap-8;
+  .extended-menu {
+    @apply w-full h-full hidden pr-4;
+    
+    .extended-menu--wrapper {
+      @apply flex flex-row gap-16 justify-end w-full; 
+    }
 
-    a {
-      @apply btn normal-case no-underline text-lg;
-
-      &:hover {
-        @apply text-primary;
+    .extended-menu--item {
+      position: relative;
+      
+      &.selected {
+        @apply opacity-100;
+        
+        a { @apply text-primary } 
       }
     }
+    .extended-menu--decoration {
+      @apply bg-primary absolute top-full left-0 w-full h-[2px];
+    }
+
+    a {
+      @apply text-xl no-underline;
+
+      &:hover {
+        color: inherit;
+      }   
+    }
   }
 
-  .menu-sm {
+  .mobile-menu {
     @apply block;
 
     .nav-wrapper {
@@ -30,8 +43,19 @@
       height: calc(100vh - 3.5rem);
 
       nav {
-        @apply flex flex-col gap-8 px-6 py-4;
         @apply bg-base-100 text-xl font-extrabold text-gray-lightest;
+      
+        >div {
+          @apply border border-primary px-6 pt-4 relative border-b-0 hover:bg-primary;
+          height: 3.5rem;
+          
+          &:last-child {
+            @apply border-b;
+          }
+          a {
+            @apply w-full h-full absolute hover:text-inherit;
+          }
+        }
       }
     }
 
@@ -39,14 +63,13 @@
   }
 
   @media(min-width: 600px) {
-    .menu {
-      @apply block;
+    .extended-menu {
+      @apply flex;
     }
     
-    .menu-sm {
+    .mobile-menu {
       @apply hidden;
     }
   }
-
-
 }
+
