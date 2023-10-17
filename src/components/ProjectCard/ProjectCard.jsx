@@ -1,4 +1,6 @@
+import { useRef, useEffect, useMemo, useState } from 'react'
 import './project_card.css'
+import { motion } from 'framer-motion'
 
 function ProjectCard({project}) {
 
@@ -9,8 +11,55 @@ function ProjectCard({project}) {
     window.open(project.live_url)
   }
 
+  const cardRef = useRef(null);
+
+  const useIsInViewport = (ref) => {
+    const [isIntersecting, setIsIntersecting] = useState(false);
+
+    const observer = useMemo(
+      () =>
+        new IntersectionObserver(([entry]) =>
+          setIsIntersecting(entry.isIntersecting),
+        ),
+      [],
+    );
+
+    useEffect(() => {
+      observer.observe(ref.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref, observer]);
+
+    return isIntersecting;
+  }
+
+  const isInViewport = useIsInViewport(cardRef);
+
+  const [hasBeenInViewport, setHasBeenInViewport] = useState(false)
+  
+  useEffect(() => {
+    if(isInViewport && !hasBeenInViewport)
+      setHasBeenInViewport(true)
+
+  }, [isInViewport, hasBeenInViewport])
+
   return (
-    <div className="project-card" onClick={handleClick}>
+    <motion.div
+      ref={cardRef}
+      className="project-card"
+      // initial={{ opacity: 0, x: '-90vw' }}
+      // animate={{ opacity: hasBeenInViewport ? 1 : 0, x: hasBeenInViewport ? 0 : '-90vw' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: hasBeenInViewport ? 1 : 0}}
+      transition={{
+        ease: 'linear',
+        duration: 1,
+        x: { duration: 0.7 }
+      }}
+      onClick={handleClick}
+    >
       <div
         className="bg-image"
         style={{ backgroundImage: `url(${project.image_url})` }}
@@ -30,7 +79,7 @@ function ProjectCard({project}) {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 
 }

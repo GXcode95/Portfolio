@@ -1,6 +1,7 @@
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
 import './projects.css'
 import me from '../../assets/me.jpg'
+import { motion } from 'framer-motion'
 
 const projects = {
   pro: [
@@ -43,7 +44,15 @@ const projects = {
 function Projects() {
 
   return (
-    <div className="projects">
+    <motion.div
+      className="projects"
+      initial={{ opacity: 0}}
+      animate={{ opacity: 1 }}
+      transition={{
+        ease: 'linear',
+        duration: .4,
+      }}
+    >
       <section className="wrapper">
         <h2>Profesional Projects</h2>
         {projects.pro.map(project => {
@@ -57,7 +66,7 @@ function Projects() {
           return <ProjectCard key={project.name} project={project}/>
         })}
       </section>
-    </div>
+    </motion.div>
   )
 }
 

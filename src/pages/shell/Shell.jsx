@@ -1,8 +1,11 @@
+import './shell.css'
+import COMMANDS from '../../commands'
+
 import { useState, useEffect, useRef } from 'react'
 import History from '../../components/History'
 import InputCli from '../../components/InputCli'
-import COMMANDS from '../../commands'
-import './shell.css'
+import { motion } from 'framer-motion'
+
 function Shell() {
   const [history, setHistory] = useState([])
   const inputRef = useRef(null)
@@ -34,7 +37,15 @@ function Shell() {
   }, [history]);
 
   return (
-    <div className="shell">
+    <motion.div
+      className="shell"
+      initial={{ opacity: 0}}
+      animate={{ opacity: 1 }}
+      transition={{
+        ease: 'linear',
+        duration: .4,
+      }}
+    >
       <History history={history} />
 
       <hr />
@@ -44,7 +55,7 @@ function Shell() {
         history={history}
         handleSubmit={handleSubmit}
       />
-    </div>
+    </motion.div>
   )
 }
 

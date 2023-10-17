@@ -1,7 +1,8 @@
+import './contact.css'
+
 import { useState } from 'react';
 import * as emailjs from "emailjs-com";
-
-import './contact.css'
+import { motion } from 'framer-motion';
 
 
 const data = {
@@ -70,7 +71,15 @@ function Contact() {
   };
 
   return (
-    <div className="contact">
+    <motion.div
+      className="contact"
+      initial={{ opacity: 0}}
+      animate={{ opacity: 1 }}
+      transition={{
+        ease: 'linear',
+        duration: .4,
+      }}
+    >
       <div className="wrapper">
         <h1>Contact Me</h1>
 
@@ -117,7 +126,7 @@ function Contact() {
         </main>
 
       </div>
-    </div>
+    </motion.div>
   )
 }
 

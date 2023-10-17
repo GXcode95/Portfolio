@@ -1,4 +1,5 @@
 import './about.css'
+import { motion } from 'framer-motion'
 
 const skills = ['Rails', 'Hotwire', 'React', 'Docker', 'AWS', 'Postgresql', 'Tailwind', 'Figma']
 const works = [
@@ -10,7 +11,15 @@ const works = [
 ]
 function About() {
   return (
-    <div className="about">
+    <motion.div
+      className="about"
+      initial={{ opacity: 0}}
+      animate={{ opacity: 1 }}
+      transition={{
+        ease: 'linear',
+        duration: .4,
+      }}
+    >
       <div className="wrapper">
         <h1>About Me</h1>
         <section className="whoami">
@@ -42,7 +51,7 @@ function About() {
           </ul>
         </section>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

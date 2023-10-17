@@ -2,10 +2,19 @@ import "./home.css";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
 import me from '../../assets/me.jpg'
+import { motion } from "framer-motion";
 
 export const Home = () => {
   return (
-      <section className="home">
+      <motion.section
+        className="home"
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1 }}
+        transition={{
+          ease: 'linear',
+          duration: .4,
+        }}
+      >
           <div
             className="bg-image"
             style={{ backgroundImage: `url(${me})` }}
@@ -45,7 +54,7 @@ export const Home = () => {
             </div>
               
           </div>
-      </section>
+      </motion.section>
   );
 };
 
