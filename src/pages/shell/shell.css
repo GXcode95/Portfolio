@@ -7,4 +7,16 @@
   hr {
     @apply border-gray-500;
   }
+
+  input,
+  textarea {
+    @apply bg-black border-none;
+    @apply p-0 inline-block;
+    width: fit-content;
+    
+    &:focus {
+      box-shadow: none;
+      
+    }
+  }
 }
