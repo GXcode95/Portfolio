@@ -1,6 +1,6 @@
 import Prompt from "../Prompt/Prompt"
 
-function InputCli({handleSubmit, inputRef}) {  
+function InputCli({handleSubmit, inputRef, handleKeyDown}) {  
   const preventFocusOut = (e) => {
     e.preventDefault()
     e.target.focus()
@@ -21,6 +21,7 @@ function InputCli({handleSubmit, inputRef}) {
         className={`focus:outline-none flex-grow`}
         autoFocus={true}
         onBlur={preventFocusOut}
+        onKeyDown={handleKeyDown}
       />
     </form>
     </>

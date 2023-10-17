@@ -8,6 +8,8 @@ import { motion } from 'framer-motion'
 
 function Shell() {
   const [history, setHistory] = useState([{date: new Date(), command: 'banner', args: [], string: null}])
+  const [lastHistoryEntry, setLastHistoryEntry] = useState(null)
+
   const inputRef = useRef(null)
 
   const handleSubmit = (e) => {
@@ -23,6 +25,7 @@ function Shell() {
 
     inputRef.current.value = ''
     setHistory([...history, entry])
+    setLastHistoryEntry(entry)
     execCommand(entry)
   }
 
@@ -31,11 +34,38 @@ function Shell() {
       COMMANDS[entry.command].exec()
   }
   
+  const handleKeyDown = (e) => {
+    // console.log(e.keyCode, e.key)
+    if ([76,38,40,9].includes(e.keyCode) == false)
+      return
+    
+    if (e.keyCode == 38 && !lastHistoryEntry) {
+      e.preventDefault()
+      inputRef.current.value = lastHistoryEntry.string
+      setLastHistoryEntry(history[history.indexOf(lastHistoryEntry) - 1])
+    }
+    
+    if (e.keyCode == 40 && !lastHistoryEntry) {
+      e.preventDefault()
+      inputRef.current.value = lastHistoryEntry.string
+      setLastHistoryEntry(history[history.indexOf(lastHistoryEntry) + 1])
+    }
+  
+    if (e.keyCode == 9 && inputRef.current.value === '') {
+      e.preventDefault()    
+      let completions = Object.keys(COMMANDS).filter(name => ( name.startsWith(inputRef.current.value )))
+
+      if (completions.length === 1)
+        inputRef.current.value = completions[0]
+    }
+  }
+
   useEffect(() => {
     inputRef.current?.scrollIntoView({ behavior: "smooth" })
     
   }, [history]);
 
+  
   return (
     <motion.div
       className="shell"
@@ -52,6 +82,7 @@ function Shell() {
         inputRef={inputRef}
         history={history}
         handleSubmit={handleSubmit}
+        handleKeyDown={handleKeyDown}
       />
     </motion.div>
   )

@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom"
+
 const BANNER = 
-`        _   _
+`
+        _   _
        (.)_(.)
     _ (   _   ) _
    / \\/\`-----'\\/ \\
@@ -13,6 +16,7 @@ const BANNER =
 function BannerCmd() { 
   return (
     <div className="whitespace-pre-wrap">
+      <p>Hello! Welcome on my website! :)</p>
       <p className="text-primary">
         { BANNER }
       </p>
@@ -20,10 +24,14 @@ function BannerCmd() {
         Type &quot;<span className="text-info">help</span>&quot; to see the list of available commands.
       </p>
       <p>
-        Type &quot;<span className="text-info">fetch&quot;</span> to display summary.
+        Type &quot;<span className="text-info">fetch</span>&quot; to display summary.
         </p>
       <p>
-        Type &quot;<span className="text-info">gui&quot;</span> to switch to traditional interface.
+        Type &quot;<span className="text-info">gui</span>&quot; or&nbsp; 
+        <Link to="/home" className="text-red-500 font-extrabold">
+          CLICK HERE
+        </Link>
+        &nbsp;to switch to traditional interface.
       </p>
       <br />
       <br />
