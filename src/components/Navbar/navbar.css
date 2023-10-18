@@ -1,43 +1,59 @@
 .nav {
-  @apply bg-base-100 navbar min-h-[3.5rem] max-h-[3.5rem];
-  z-index: 1000;
+  @apply bg-base-100 navbar sticky min-h-[3.5rem] max-h-14;
+  z-index: 100;
 
   .title {
     @apply btn normal-case text-xl text-gray-lightest hover:text-primary;
   }
 
-  .nav-lg {
-    @apply w-full h-full hidden pr-4 gap-16 flex-row justify-end;
+  .nav-menu--lg {
+    @apply w-full h-full hidden pr-4 gap-10 flex-row justify-end;
     
-
-    .nav-lg__item {
-      @apply text-xl no-underline;
+    .nav-menu--lg__item {
+      @apply text-xl no-underline py-1.5 px-4 text-gray-dark relative;
       
+      span {
+        @apply absolute top-0 left-0 w-full h-full;
+        @apply border-primary border-b-2 opacity-0;
+
+        z-index: -1;
+        border-radius: .3rem;
+        transform: scale(0) translateY(50px);
+        transition: .5s;
+      }
+
+      &:hover,
       &.selected {
         @apply text-primary;
+        
+        span {
+          @apply opacity-100;
+          
+          transform: scale(1) translateY(0);
+        }
       }
     }
   }
 
-  .nav-sm {
+  .nav-menu--sm {
     @apply block;
 
-    .nav-sm__menu {
+    .nav-menu--sm__menu-wrapper {
       @apply absolute w-full left-0;
       height: calc(100vh - 3.5rem);
 
-      nav {
+      .nav-menu--sm__menu {
         @apply bg-base-100 text-xl font-extrabold text-gray-lightest;
       
-        >div {
-          @apply border border-primary px-6 pt-4 relative border-b-0 hover:bg-primary;
-          height: 3.5rem;
+        .nav-menu--sm__item {
+          @apply border border-primary px-6 pt-4 relative border-b-0 h-14;
+          @apply hover:bg-primary;
           
-          &:last-child {
-            @apply border-b;
-          }
+          &:last-child { @apply border-b; }
+          
           a {
-            @apply w-full h-full absolute hover:text-inherit;
+            @apply w-full h-full absolute;
+            @apply hover:text-inherit;
           }
         }
       }
@@ -47,11 +63,11 @@
   }
 
   @media(min-width: 600px) {
-    .nav-lg {
+    .nav-menu--lg {
       @apply flex;
     }
     
-    .nav-sm {
+    .nav-menu--sm {
       @apply hidden;
     }
   }

@@ -55,7 +55,7 @@ function Navbar() {
   
   return (
     <>
-      <header className={`nav sticky ${visible ? 'top-0' : ''} `}>
+      <header className={`nav ${visible ? 'top-0' : ''} `}>
         <div className="flex-1">
           <Link to="/home" className="title">XavierCode</Link>
           <motion.div
@@ -70,20 +70,23 @@ function Navbar() {
           </motion.div>
         </div>
         
-        <nav className="nav-lg">
+        <nav className="nav-menu--lg">
           {menuItems.map((item, idx) => (
             <Link 
               to={item.url}
               key={idx}
-              className={`nav-lg__item ${selected === idx && 'selected'}`} 
-              onClick={() => setSelected(idx)}
+              className={`nav-menu--lg__item ${selected === idx && 'selected'}`} 
+              onClick={() => setSelected(idx) }
+              onMouseEnter={() => setSelected(-1) }
+              onMouseOut={() =>  setSelected(currItemIdx) }
             >
               {item.text}
+              <span></span>
             </Link>
           ))}
         </nav>
 
-        <div className="nav-sm">
+        <div className="nav-menu--sm">
           <div>
             <button onClick={toggleMenu} className="btn">
               <Bars3Icon className="h-6 w-6 text-gray-lightest"/>
@@ -91,12 +94,12 @@ function Navbar() {
           </div>
 
           <div 
-            className={`nav-sm__menu ${!showMenu && "hidden"}`}
+            className={`nav-menu--sm__menu-wrapper ${!showMenu && "hidden"}`}
             onClick={closeMenu}
           >
-            <nav>
+            <nav className="nav-menu--sm__menu">
               {menuItems.map((item, idx) => (
-                <div key={idx} >
+                <div key={idx} className="nav-menu--sm__item">
                   <Link to={item.url}>{item.text}</Link>
                 </div>
               ))}
