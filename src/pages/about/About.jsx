@@ -2,7 +2,7 @@ import './about.css'
 import { motion } from 'framer-motion'
 import Scroller from '../../components/Scroller/Scroller'
 
-const skills = ['Rails', 'React', 'Hotwire', 'Docker', 'Tailwind', 'Postgresql', 'AWS', 'Figma']
+const skills = ['Rails', 'Git', 'Hotwire', 'Docker', 'Tailwind', 'Postgresql', 'React', 'Figma']
 const works = [
   {
     title: 'Fullstack Developer',
@@ -12,7 +12,7 @@ const works = [
 ]
 function About() {
   const isMainSKill = (skill) => {
-    return ["Rails", "Hotwire", "Tailwind"].includes(skill)
+    return ["Rails", "Hotwire", "Tailwind", "React"].includes(skill)
   }
   
   return (

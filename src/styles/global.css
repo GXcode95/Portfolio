@@ -24,7 +24,7 @@ a {
 
 input,
 textarea {
-  @apply bg-black border border-gray-light;
+  @apply bg-black border border-gray-lightest;
   @apply p-2 block w-full;
   
   &:focus {

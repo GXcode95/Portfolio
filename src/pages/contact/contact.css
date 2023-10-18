@@ -1,7 +1,7 @@
 .contact {
 	@apply flex justify-center pt-10;
 
-	h1 { @apply text-4xl border-b w-full min-w-[200px] py-6; }
+	h1 { @apply text-4xl border-b border-gray-lightest w-full min-w-[200px] py-6; }
 
 	main { @apply flex flex-col gap-10; }
 
@@ -20,7 +20,7 @@
 		
 		.inputs {	@apply flex flex-col gap-6; }
 	
-		.btn { @apply text-gray-lightest self-start; }
+		.btn { @apply self-start; }
 	}
 
 	/***************/

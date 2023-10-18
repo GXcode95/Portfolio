@@ -1,7 +1,7 @@
 import { useRef, useEffect, useMemo, useState } from 'react'
 import './project_card.css'
 import { motion } from 'framer-motion'
-
+import { VscGithubAlt } from 'react-icons/vsc'
 function ProjectCard({project}) {
 
   const handleClick = (e) => {
@@ -73,10 +73,16 @@ function ProjectCard({project}) {
           })}
         </ul>
 
-        <div className='flex gap-3 flex-wrap'>
-          <a href={project.code_url} target="_blank" rel="noreferrer" className="btn btn-primary">
-            Source Code
-          </a>
+        <div className='flex gap-5 items-center'>
+          { project.live_url &&
+              <a href={project.live_url} target="_blank" rel="noreferrer" className="btn btn-primary btn-outline">
+                Live DEMO
+              </a>}
+
+          { project.code_url &&
+              <a to={project.code_url} target="_blank" rel="noreferrer">
+                <VscGithubAlt className="h-10 w-10" />
+              </a> }
         </div>
       </div>
     </motion.div>

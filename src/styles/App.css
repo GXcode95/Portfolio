@@ -1,5 +1,5 @@
 .app {
-  @apply w-screen;
+  @apply w-screen text-gray-lightest;
 
   .title {
     @apply btn btn-ghost normal-case text-xl;
