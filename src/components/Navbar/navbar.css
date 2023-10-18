@@ -6,39 +6,23 @@
     @apply btn normal-case text-xl text-gray-lightest hover:text-primary;
   }
 
-  .extended-menu {
-    @apply w-full h-full hidden pr-4;
+  .nav-lg {
+    @apply w-full h-full hidden pr-4 gap-16 flex-row justify-end;
     
-    .extended-menu--wrapper {
-      @apply flex flex-row gap-16 justify-end w-full; 
-    }
 
-    .extended-menu--item {
-      position: relative;
+    .nav-lg__item {
+      @apply text-xl no-underline;
       
       &.selected {
-        @apply opacity-100;
-        
-        a { @apply text-primary } 
+        @apply text-primary;
       }
-    }
-    .extended-menu--decoration {
-      @apply bg-primary absolute top-full left-0 w-full h-[2px];
-    }
-
-    a {
-      @apply text-xl no-underline;
-
-      &:hover {
-        color: inherit;
-      }   
     }
   }
 
-  .mobile-menu {
+  .nav-sm {
     @apply block;
 
-    .nav-wrapper {
+    .nav-sm__menu {
       @apply absolute w-full left-0;
       height: calc(100vh - 3.5rem);
 
@@ -63,11 +47,11 @@
   }
 
   @media(min-width: 600px) {
-    .extended-menu {
+    .nav-lg {
       @apply flex;
     }
     
-    .mobile-menu {
+    .nav-sm {
       @apply hidden;
     }
   }

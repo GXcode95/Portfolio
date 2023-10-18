@@ -70,34 +70,28 @@ function Navbar() {
           </motion.div>
         </div>
         
-        <nav className="extended-menu">
-          <div className="menu extended-menu--wrapper flex">
-              {menuItems.map((item, idx) => (
-                <div 
-                  key={idx}
-                  className={`extended-menu--item ${selected === idx && 'selected'}`} 
-                  onClick={() => setSelected(idx)}
-                >
-                  <Link to={item.url}>{item.text}</Link>
-                  {selected === idx && (
-                    <motion.div 
-                      className="extended-menu--decoration" 
-                      layoutId="underline" />
-                  )}
-                </div>
-              ))}
-          </div>
+        <nav className="nav-lg">
+          {menuItems.map((item, idx) => (
+            <Link 
+              to={item.url}
+              key={idx}
+              className={`nav-lg__item ${selected === idx && 'selected'}`} 
+              onClick={() => setSelected(idx)}
+            >
+              {item.text}
+            </Link>
+          ))}
         </nav>
 
-        <div className="mobile-menu">
-          <div className="icon-menu">
+        <div className="nav-sm">
+          <div>
             <button onClick={toggleMenu} className="btn">
               <Bars3Icon className="h-6 w-6 text-gray-lightest"/>
             </button>
           </div>
 
-          <div
-            className={`nav-wrapper ${!showMenu && "hidden"}`}
+          <div 
+            className={`nav-sm__menu ${!showMenu && "hidden"}`}
             onClick={closeMenu}
           >
             <nav>
