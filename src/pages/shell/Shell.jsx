@@ -35,23 +35,21 @@ function Shell() {
   }
   
   const handleKeyDown = (e) => {
-    // console.log(e.keyCode, e.key)
-    if ([76,38,40,9].includes(e.keyCode) == false)
-      return
+    console.log(e.keyCode, e.key)
     
-    if (e.keyCode == 38 && !lastHistoryEntry) {
+    if (e.keyCode == 38 && lastHistoryEntry) {
       e.preventDefault()
       inputRef.current.value = lastHistoryEntry.string
       setLastHistoryEntry(history[history.indexOf(lastHistoryEntry) - 1])
     }
     
-    if (e.keyCode == 40 && !lastHistoryEntry) {
+    if (e.keyCode == 40 && lastHistoryEntry) {
       e.preventDefault()
       inputRef.current.value = lastHistoryEntry.string
       setLastHistoryEntry(history[history.indexOf(lastHistoryEntry) + 1])
     }
   
-    if (e.keyCode == 9 && inputRef.current.value === '') {
+    if (e.keyCode == 9 && inputRef.current.value !== '') {
       e.preventDefault()    
       let completions = Object.keys(COMMANDS).filter(name => ( name.startsWith(inputRef.current.value )))
 

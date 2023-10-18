@@ -20,15 +20,7 @@
 	}
 
 	.skills {
-		ul { 
-			@apply flex flex-wrap gap-6; 
-
-			li {
-				@apply border border-gray-lightest px-6 py-3;
-
-				border-radius: 0;
-			}
-		}
+		
 	}
 }
 

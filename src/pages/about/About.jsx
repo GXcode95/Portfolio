@@ -1,7 +1,8 @@
 import './about.css'
 import { motion } from 'framer-motion'
+import Scroller from '../../components/Scroller/Scroller'
 
-const skills = ['Rails', 'Hotwire', 'React', 'Docker', 'AWS', 'Postgresql', 'Tailwind', 'Figma']
+const skills = ['Rails', 'React', 'Hotwire', 'Docker', 'Tailwind', 'Postgresql', 'AWS', 'Figma']
 const works = [
   {
     title: 'Fullstack Developer',
@@ -10,6 +11,10 @@ const works = [
   }
 ]
 function About() {
+  const isMainSKill = (skill) => {
+    return ["Rails", "Hotwire", "Tailwind"].includes(skill)
+  }
+  
   return (
     <motion.div
       className="about"
@@ -42,13 +47,26 @@ function About() {
 
         <section className="skills">
           <h2>Skills</h2>
-          <ul>
-            {skills.map(skill => { return (
-              <li key={skill}>
+          <Scroller>
+            {skills.map((skill,idx) => (
+              <li
+                className={isMainSKill(skill) && 'text-primary'}
+                key={idx}
+              >
                 { skill }
               </li>
-            )})}
-          </ul>
+            ))}
+          </Scroller>
+          <Scroller reverse={true} >
+            {skills.reverse().map((skill,idx) => (
+              <li
+                className={isMainSKill(skill) && 'text-primary'}
+                key={idx}
+              >
+                { skill }
+              </li>
+            ))}
+          </Scroller>
         </section>
       </div>
     </motion.div>
