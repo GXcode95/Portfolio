@@ -75,8 +75,8 @@ function ProjectCard({project}) {
 
         <div className='flex gap-5 items-center'>
           { project.live_url &&
-              <a href={project.live_url} target="_blank" rel="noreferrer" className="btn btn-primary btn-outline">
-                Live DEMO
+              <a href={project.live_url} target="_blank" rel="noreferrer" className="mybtn">
+                <span>Live DEMO</span><i></i>
               </a>}
 
           { project.code_url &&

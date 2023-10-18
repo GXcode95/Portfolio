@@ -18,12 +18,12 @@ const menuItems = [
     url: '/contact',
   }
 ]
+
 function Navbar() {
   const href = window.location.href.split('/')
   const currItemIdx = menuItems.findIndex((item) => item.url === `/${href[href.length - 1]}`)
   const [selected, setSelected] = useState(currItemIdx)
   
-
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
   const handleScroll = () => {

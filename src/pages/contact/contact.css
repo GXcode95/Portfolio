@@ -20,7 +20,7 @@
 		
 		.inputs {	@apply flex flex-col gap-6; }
 	
-		.btn { @apply self-start; }
+		.mybtn { @apply self-start; }
 	}
 
 	/***************/

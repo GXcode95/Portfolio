@@ -119,8 +119,8 @@ function Contact() {
               required
             />
 
-            <button type="submit" className={`btn btn-primary btn-outline`}>
-              {formData.loading ? "Sending..." : "Send"}
+            <button type="submit" className={`mybtn`}>
+              <span>{formData.loading ? "Sending..." : "Send"}</span><i></i>
             </button>
           </form>
         </main>
