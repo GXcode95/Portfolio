@@ -3,6 +3,10 @@
 
 	section {
 		@apply flex flex-col gap-6;
+
+		.title {
+			@apply my-4;
+		}
 	}
 
 	.work li {

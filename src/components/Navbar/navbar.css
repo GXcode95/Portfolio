@@ -3,7 +3,8 @@
   z-index: 100;
 
   .nav__title {
-    @apply btn normal-case text-xl text-secondary;
+    @apply text-xl text-secondary font-semibold no-underline 
+            px-4 cursor-pointer;
   }
 
   .nav-menu--lg {
@@ -13,8 +14,8 @@
       @apply text-xl no-underline py-1.5 px-6 text-gray-dark relative;
       
       span {
-        @apply absolute top-0 left-[10%] w-[80%] h-full;
-        @apply border-primary border-b-2 opacity-0;
+        @apply absolute top-0 left-[10%] w-[80%] h-full 
+                border-primary border-b-2 opacity-0;
 
         z-index: -1;
         border-radius: .3rem;

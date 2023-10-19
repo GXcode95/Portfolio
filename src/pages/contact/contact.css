@@ -1,17 +1,10 @@
 .contact {
 	@apply flex justify-center pt-10;
 
-	h1 {
-		@apply text-4xl border-b-2 border-primary w-max pr-2 pb-2 text-secondary; 
-		border-bottom-right-radius: .4rem;
-	}
-
 	main { @apply flex flex-col gap-10; }
 
 	.text {
 		@apply flex flex-col gap-2;
-		
-		h2 { @apply text-3xl pb-4; }
 
 		p {	@apply text-lg; }
 
@@ -30,7 +23,7 @@
 	/***  Media  ***/
 	/***************/
 	
-	@media (min-width:950px) {
+	@media (min-width:1100px) {
 		form {
 			@apply flex-1;
 			
@@ -39,7 +32,7 @@
 
 		main { @apply flex-row; }
 		
-		aside { @apply flex-1; }
+		.text { @apply w-1/3; }
 	}
 }
 

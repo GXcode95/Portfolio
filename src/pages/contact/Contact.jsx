@@ -81,14 +81,13 @@ function Contact() {
       }}
     >
       <div className="wrapper">
-        <h1>Contact Me</h1>
+        <h2 className="title">Get in touch</h2>
 
         <main>
-          <aside className="text">
-            <h2>Get in touch</h2>
+          <div className="text">
             <p><strong>Email:</strong> <a href="mailto:xavier.grenouillet@gmail.com">xavier.grenouillet@gmail.com</a></p>
             <p>Looking forward to hearing from you!</p>
-          </aside>
+          </div>
 
           <form onSubmit={handleSubmit}>
             <div className="inputs">
