@@ -2,7 +2,7 @@ import './scroller.css'
 import { motion } from "framer-motion"
 import { useRef, useEffect } from "react"
 
-export default function Scroller({children, reverse=false, gap=3, duration=20}){
+export default function Scroller({children, reverse=false, gap=0, duration=20}){
   const innerScrollerRef = useRef(null)
 
   const initial = {
@@ -34,15 +34,14 @@ export default function Scroller({children, reverse=false, gap=3, duration=20}){
 
   return (
     <div className="scroller">
-      <motion.ul
+      <motion.div
         ref={innerScrollerRef}
-        className='w-max flex py-2'
         initial={initial}
         animate={animate}
         transition={transition}
       >
         {children}
-      </motion.ul>
+      </motion.div>
     </div>
   )
 }

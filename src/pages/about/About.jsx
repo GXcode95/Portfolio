@@ -10,10 +10,20 @@ const works = [
     date: '2022-2023'
   }
 ]
-function About() {
-  const isMainSKill = (skill) => {
-    return ["Rails", "Hotwire", "Tailwind", "React"].includes(skill)
+function About() {  
+  const SkillItems = () => {
+    return (
+      skills.map((skill,idx) => (
+        <span
+          key={idx}
+          className={`skills__item ${idx % 2 == 0 ? "bg-primary" : "bg-gray-darker"}`}
+        >
+          { skill }
+        </span>
+      ))
+    )
   }
+
   
   return (
     <motion.div
@@ -47,26 +57,20 @@ function About() {
 
         <section className="skills">
           <h2>Skills</h2>
-          <Scroller>
-            {skills.map((skill,idx) => (
-              <li
-                className={isMainSKill(skill) && 'text-primary'}
-                key={idx}
-              >
-                { skill }
-              </li>
-            ))}
-          </Scroller>
-          <Scroller reverse={true} >
-            {skills.reverse().map((skill,idx) => (
-              <li
-                className={isMainSKill(skill) && 'text-primary'}
-                key={idx}
-              >
-                { skill }
-              </li>
-            ))}
-          </Scroller>
+          <div>
+            <Scroller duration={20}>
+              <SkillItems />        
+            </Scroller>
+            <Scroller duration={30}>
+              <SkillItems />
+            </Scroller>
+            <Scroller duration={10}>
+              <SkillItems />
+            </Scroller>
+            <Scroller duration={40}>
+              <SkillItems />
+            </Scroller>
+          </div>
         </section>
       </div>
     </motion.div>

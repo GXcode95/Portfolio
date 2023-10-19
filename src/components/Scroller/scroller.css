@@ -15,4 +15,8 @@
     white, 80%,
     transparent
   );
+
+  >div {
+    @apply w-max flex;
+  }
 }
