@@ -7,13 +7,13 @@
   }
 
   .nav-menu--lg {
-    @apply w-full h-full hidden pr-4 gap-10 flex-row justify-end;
+    @apply w-full h-full hidden pr-4 flex-row justify-end;
     
     .nav-menu--lg__item {
-      @apply text-xl no-underline py-1.5 px-4 text-gray-dark relative;
+      @apply text-xl no-underline py-1.5 px-6 text-gray-dark relative;
       
       span {
-        @apply absolute top-0 left-0 w-full h-full;
+        @apply absolute top-0 left-[10%] w-[80%] h-full;
         @apply border-primary border-b-2 opacity-0;
 
         z-index: -1;
@@ -46,8 +46,9 @@
         @apply bg-base-100 text-xl font-extrabold text-gray-lightest;
       
         .nav-menu--sm__item {
-          @apply border border-primary px-6 pt-4 relative border-b-0 h-14;
+          @apply border border-gray-darker px-6 pt-4 relative border-b-0 h-14;
           @apply hover:bg-primary;
+          transition: background-color .5s;
           
           &:last-child { @apply border-b; }
           
