@@ -55,14 +55,14 @@ function Projects() {
       }}
     >
       <section className="wrapper">
-        <h2>Profesional Projects</h2>
+        <h2 className="projects__title">Profesional Projects</h2>
         {projects.pro.map(project => {
           return <ProjectCard key={project.name} project={project}/>
         })}
       </section>
       
       <section className="wrapper">
-        <h2>Personal Projects</h2>
+        <h2 className="projects__title">Personal Projects</h2>
         {projects.perso.map(project => {
           return <ProjectCard key={project.name} project={project}/>
         })}

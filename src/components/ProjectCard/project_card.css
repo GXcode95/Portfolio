@@ -1,33 +1,33 @@
 .project-card {
-  @apply flex flex-col h-[800px];
-  @apply bg-gray-darker border border-gray-lightest;
-  min-height: fit-content;
-  
-  h3 {
-    @apply text-2xl;
+  @apply card bg-gray-darkest border-2 border-gray-darker cursor-pointer
+          lg:card-side;
+  border-radius: 5px;
+  box-shadow: 0 0 0 black;
+  transition: box-shadow .5s;
+  &:hover {
+    box-shadow: 0 0 4px hsl(var(--p)), 0 0 8px hsl(var(--p));
+  }
+  &__img,
+  &__body
+   {
+    @apply lg:w-1/2;
   }
 
-  .bg-image {
-    @apply h-full w-full relative;
-    @apply bg-cover bg-center;
+  &__body { 
+    @apply card-body;
   }
-  
-  .text {
-    @apply px-4 w-full flex flex-col h-full justify-around;
-  
+
+  &__title {
+    @apply card-title border-b pb-4 w-1/2 lg:w-full;
   }
-  
-  &:hover {
-    box-shadow: 0 0 4px 0px white; 
+
+  &__text {
+    @apply py-6;
   }
-  
-  @media (min-width:950px) {
-    @apply flex-row h-[400px];
-  
-    .bg-image,
-    .text{
-      @apply w-1/2;
-    }
+
+  &__actions {
+    @apply card-actions justify-start gap-8 items-center 
+           lg:justify-end;
   }
 }
 

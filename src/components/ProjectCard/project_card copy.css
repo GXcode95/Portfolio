@@ -1,0 +1,34 @@
+.project-card {
+  @apply flex flex-col h-[800px];
+  @apply bg-gray-darker border border-gray-lightest;
+  min-height: fit-content;
+  
+  h3 {
+    @apply text-2xl;
+  }
+
+  .bg-image {
+    @apply h-full w-full relative;
+    @apply bg-cover bg-center;
+  }
+  
+  .text {
+    @apply px-4 w-full flex flex-col h-full justify-around;
+  
+  }
+  
+  &:hover {
+    box-shadow: 0 0 4px 0px white; 
+  }
+  
+  @media (min-width:950px) {
+    @apply flex-row h-[400px];
+  
+    .bg-image,
+    .text{
+      @apply w-1/2;
+    }
+  }
+}
+
+

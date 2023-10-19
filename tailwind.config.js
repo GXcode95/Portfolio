@@ -8,8 +8,9 @@ const colors = {
     light: "#969696",
     DEFAULT: "#73707A",
     dark: "#373240",
-    darker: "#1C1824",
-    darkest: "#0B041A",
+    darker: "#232323",
+    darkest: "#171717",
+    black:  "#090909"
   },
   orange: {
     DEFAULT: "#E78124",
@@ -24,10 +25,9 @@ const colors = {
     DEFAULT: "#D7468B",
   },
   black: {
-    DEFAULT: "#000000",
+    DEFAULT: "#040404",
   }
 };
-
 
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
@@ -46,11 +46,12 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          "primary": "#1eb854",
+          // "primary": "#1eb854",
+          "primary": "#9b05e4",
           "secondary": "#1db990",
           "accent": colors.gray.dark,
           "neutral": "#18342b",
-          "base-100": colors.black,
+          "base-100": colors.black.DEFAULT,
           "info": "#3abff8",
           "success": "#36d399",
           "warning": "#fbbd23",

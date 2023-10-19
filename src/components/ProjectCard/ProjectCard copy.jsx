@@ -49,6 +49,8 @@ function ProjectCard({project}) {
     <motion.div
       ref={cardRef}
       className="project-card"
+      // initial={{ opacity: 0, x: '-90vw' }}
+      // animate={{ opacity: hasBeenInViewport ? 1 : 0, x: hasBeenInViewport ? 0 : '-90vw' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: hasBeenInViewport ? 1 : 0}}
       transition={{
@@ -58,26 +60,31 @@ function ProjectCard({project}) {
       }}
       onClick={handleClick}
     >
+      <div
+        className="bg-image"
+        style={{ backgroundImage: `url(${project.image_url})` }}
+      ></div>
+      <div className="text">
+        <h3>{ project.name }</h3>
+        <p>{ project.description }</p>
+        <ul className="flex gap-3 flex-wrap">
+          {project.tags.map(tag => {
+            return <li key={tag} className="badge badge-accent">{tag}</li>
+          })}
+        </ul>
 
-      <figure className="project-card__img">
-        <img src={project.image_url} alt={`${project.name} project screenshot`}/>
-      </figure>
-      
-      <div className="project-card__body">
-        <h2 className="project-card__title">{project.name}</h2>
-        <p className="project-card__text">{project.description}</p>
-        
-        <div className="project-card__actions">
-          <button className="mybtn" disabled={project.live_url }>
-            <span>Demo</span><i></i>
-          </button>
+        <div className='flex gap-5 items-center'>
+          { project.live_url &&
+              <a href={project.live_url} target="_blank" rel="noreferrer" className="mybtn">
+                <span>Live DEMO</span><i></i>
+              </a>}
+
           { project.code_url &&
               <a to={project.code_url} target="_blank" rel="noreferrer">
                 <VscGithubAlt className="h-10 w-10" />
               </a> }
         </div>
       </div>
-    
     </motion.div>
   )
 
