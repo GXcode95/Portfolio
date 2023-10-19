@@ -53,7 +53,21 @@ textarea {
   border-bottom-right-radius: .4rem;
 }
 
-.wrapper { @apply flex flex-col gap-16 w-10/12 min-w-[320px] max-w-[1200px]; }
+.wrapper { @apply flex flex-col gap-16 w-10/12 min-w-[320px] max-w-[1850px]; }
+
+.glow-icon {
+  @apply text-secondary;
+      
+  transition: .5s;
+
+  &:hover {
+      @apply text-secondary;
+
+      filter: drop-shadow(0 0 4px hsl(var(--p)))
+              drop-shadow(0 0 8px hsl(var(--p)))
+              drop-shadow(0 0 12px hsl(var(--p)));
+  }
+}
 
 .mybtn {
   position: relative;
@@ -68,7 +82,7 @@ textarea {
 
   &:hover {
     letter-spacing: 0.25em;
-    @apply bg-primary text-primary;
+    @apply bg-primary text-secondary;
     box-shadow: 0 0 5px hsl(var(--p));
 
     i::before {

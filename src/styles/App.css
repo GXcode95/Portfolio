@@ -1,11 +1,3 @@
 .app {
-  @apply w-screen text-gray-lightest;
-
-  .menu {
-    @apply flex-none;
-
-    button {
-      @apply btn btn-square btn-ghost;
-    }
-  }
+  @apply w-screen;
 }

@@ -6,12 +6,16 @@
 	}
 
 	.work li {
-		@apply w-full grid border-b py-1 mb-1;
+		@apply ml-[1%] w-[96%] grid border-b py-1 mb-1 px-3;
 
 		grid-template-columns: 3fr 1fr 1fr;
 
-		.work--title {
-			@apply font-extrabold
+		.work__title {
+			@apply font-extrabold;
+		}
+		.work__date,
+		.work__company {
+			@apply text-right;
 		}
 	}
 

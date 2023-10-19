@@ -49,8 +49,6 @@ function ProjectCard({project}) {
     <motion.div
       ref={cardRef}
       className="project-card"
-      // initial={{ opacity: 0, x: '-90vw' }}
-      // animate={{ opacity: hasBeenInViewport ? 1 : 0, x: hasBeenInViewport ? 0 : '-90vw' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: hasBeenInViewport ? 1 : 0}}
       transition={{

@@ -46,9 +46,9 @@ function About() {
           <ul>
             {works.map(work => { return (
               <li key={work}>
-                <span className="work--title">{ work.title }</span>
-                <span>{ work.company }</span>
-                <span>{ work.date }</span>    
+                <span className="work__title">{ work.title }</span>
+                <span className="work__company">{ work.company }</span>
+                <span className="work__date">{ work.date }</span>    
               </li>
             )})}
           </ul>

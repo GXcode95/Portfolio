@@ -42,13 +42,13 @@ export const Home = () => {
             </div>
 
             <div className="cta">
-              <Link to="/projects" className="mybtn">
+              <Link to="/projects" className="button">
                 <span>Projects</span><i></i>
               </Link>
-              <Link to="/about" className="mybtn">
+              <Link to="/about" className="button">
                 <span>About</span><i></i>
               </Link>
-              <Link to="/contact" className="mybtn">
+              <Link to="/contact" className="button">
                 <span>Contact</span><i></i>
               </Link>
             </div>

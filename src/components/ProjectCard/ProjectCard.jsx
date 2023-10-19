@@ -2,6 +2,7 @@ import { useRef, useEffect, useMemo, useState } from 'react'
 import './project_card.css'
 import { motion } from 'framer-motion'
 import { VscGithubAlt } from 'react-icons/vsc'
+
 function ProjectCard({project}) {
 
   const handleClick = (e) => {
@@ -67,14 +68,21 @@ function ProjectCard({project}) {
         <h2 className="project-card__title title">{project.name}</h2>
         <p className="project-card__text">{project.description}</p>
         
+        <ul className="project-card__badge">
+          {project.tags.map(tag => {
+            return <li key={tag} className="badge badge-accent">{tag}</li>
+          })}
+        </ul>
+
         <div className="project-card__actions">
           <button className="mybtn" disabled={project.live_url }>
             <span>Demo</span><i></i>
           </button>
-          { project.code_url &&
-              <a to={project.code_url} target="_blank" rel="noreferrer" className="text-secondary">
-                <VscGithubAlt className="h-10 w-10" />
-              </a> }
+          {project.code_url &&
+            
+            <a to={project.code_url} target="_blank" rel="noreferrer" className="glow-icon">
+              <VscGithubAlt className="h-8 w-8" />
+            </a>}
         </div>
       </div>
     

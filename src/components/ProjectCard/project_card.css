@@ -1,34 +1,30 @@
 .project-card {
-  @apply card bg-gray-darkest border-2 border-gray-darker cursor-pointer
-          lg:card-side;
+  @apply card bg-gray-darkest border-2 border-gray-darker cursor-pointer;
+  @apply max-w-[600px] xl:max-w-[500px];
+          /* lg:card-side; */
   border-radius: 5px;
   box-shadow: 0 0 0 black;
   transition: box-shadow .5s;
+  
   &:hover {
     box-shadow: 0 0 4px hsl(var(--p)), 0 0 8px hsl(var(--p));
   }
-  &__img,
-  &__body
-   {
-    @apply lg:w-1/2;
-  }
 
   &__body { 
-    @apply card-body;
+    @apply card-body  gap-6;
   }
 
   &__title {
-    @apply card-title w-1/2 lg:w-full;
+    @apply card-title w-1/2;
   }
 
-  &__text {
-    @apply py-6;
+  &__badge {
+    @apply flex gap-3 flex-wrap;
   }
 
   &__actions {
-    @apply card-actions justify-start gap-8 items-center 
-           lg:justify-end;
-  }
+    @apply card-actions justify-start items-center gap-8;
+  }    
 }
 
 

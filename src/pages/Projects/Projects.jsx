@@ -63,9 +63,11 @@ function Projects() {
       
       <section className="wrapper">
         <h2 className="title">Personal Projects</h2>
-        {projects.perso.map(project => {
-          return <ProjectCard key={project.name} project={project}/>
-        })}
+        <div className="flex flex-wrap gap-4">
+          {projects.perso.map(project => {
+            return <ProjectCard key={project.name} project={project}/>
+          })}
+        </div>
       </section>
     </motion.div>
   )
