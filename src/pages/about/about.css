@@ -1,12 +1,8 @@
 .about {
 	@apply flex justify-center py-10;
 
-	h1 { @apply text-4xl border-b w-full min-w-[200px] pb-2; }
-
 	section {
 		@apply flex flex-col gap-6;
-		
-		h2 { @apply text-2xl; }
 	}
 
 	.work li {

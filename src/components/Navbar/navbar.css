@@ -2,8 +2,8 @@
   @apply bg-base-100 navbar sticky min-h-[3.5rem] max-h-14;
   z-index: 100;
 
-  .title {
-    @apply btn normal-case text-xl text-gray-lightest hover:text-primary;
+  .nav__title {
+    @apply btn normal-case text-xl text-secondary;
   }
 
   .nav-menu--lg {
@@ -24,7 +24,7 @@
 
       &:hover,
       &.selected {
-        @apply text-primary;
+        @apply text-secondary;
         
         span {
           @apply opacity-100;

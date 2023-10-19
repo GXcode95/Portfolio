@@ -1,10 +1,6 @@
 .app {
   @apply w-screen text-gray-lightest;
 
-  .title {
-    @apply btn btn-ghost normal-case text-xl;
-  }
-
   .menu {
     @apply flex-none;
 

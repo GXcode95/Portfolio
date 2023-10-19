@@ -18,7 +18,7 @@
   }
 
   &__title {
-    @apply card-title border-b pb-4 w-1/2 lg:w-full;
+    @apply card-title w-1/2 lg:w-full;
   }
 
   &__text {

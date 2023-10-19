@@ -64,7 +64,7 @@ function ProjectCard({project}) {
       </figure>
       
       <div className="project-card__body">
-        <h2 className="project-card__title">{project.name}</h2>
+        <h2 className="project-card__title title">{project.name}</h2>
         <p className="project-card__text">{project.description}</p>
         
         <div className="project-card__actions">
@@ -72,7 +72,7 @@ function ProjectCard({project}) {
             <span>Demo</span><i></i>
           </button>
           { project.code_url &&
-              <a to={project.code_url} target="_blank" rel="noreferrer">
+              <a to={project.code_url} target="_blank" rel="noreferrer" className="text-secondary">
                 <VscGithubAlt className="h-10 w-10" />
               </a> }
         </div>

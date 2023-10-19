@@ -1,7 +1,10 @@
 .contact {
 	@apply flex justify-center pt-10;
 
-	h1 { @apply text-4xl border-b border-gray-lightest w-full min-w-[200px] py-6; }
+	h1 {
+		@apply text-4xl border-b-2 border-primary w-max pr-2 pb-2 text-secondary; 
+		border-bottom-right-radius: .4rem;
+	}
 
 	main { @apply flex flex-col gap-10; }
 

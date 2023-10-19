@@ -48,12 +48,16 @@ textarea {
 
 
 
+.title { 
+  @apply text-4xl border-b-2 border-primary w-fit pb-1.5 pr-2.5 text-secondary;
+  border-bottom-right-radius: .4rem;
+}
+
 .wrapper { @apply flex flex-col gap-16 w-10/12 min-w-[320px] max-w-[1200px]; }
 
 .mybtn {
   position: relative;
-  @apply bg-gray-darker;
-  color: #fff;
+  @apply bg-gray-darker text-secondary;
   text-decoration: none;
   text-transform: uppercase;
   /* font-size: 1.5rem; */

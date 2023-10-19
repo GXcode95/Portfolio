@@ -57,7 +57,7 @@ function Navbar() {
     <>
       <header className={`nav ${visible ? 'top-0' : ''} `}>
         <div className="flex-1">
-          <Link to="/home" className="title">XavierCode</Link>
+          <Link to="/home" className="nav__title">XavierCode</Link>
           <motion.div
             whileHover={{ rotate: 360 }}
             transition={{
@@ -89,7 +89,7 @@ function Navbar() {
         <div className="nav-menu--sm">
           <div>
             <button onClick={toggleMenu} className="btn">
-              <Bars3Icon className="h-6 w-6 text-gray-lightest"/>
+              <Bars3Icon className="h-6 w-6"/>
             </button>
           </div>
 
